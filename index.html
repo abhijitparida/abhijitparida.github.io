@@ -19,12 +19,29 @@
         img {
             max-width: 90%;
             height: auto;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-    <img src="home.png" alt="Home">
+    <img src="home.png" alt="Home" id="homeImage">
+    <audio id="bgMusic" src="https://d3f0zak8fjp75d.cloudfront.net/lofi.mp3" loop></audio>
+
+    <script>
+        const homeImage = document.getElementById('homeImage');
+        const bgMusic = document.getElementById('bgMusic');
+
+        homeImage.addEventListener('click', () => {
+            if (bgMusic.paused) {
+                bgMusic.play();
+            } else {
+                bgMusic.pause();
+            }
+        });
+    </script>
 </body>
+
+<!-- Music by kaveesha Senanayake from Pixabay -->
 
 </html>
