@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Abhijit Parida — interactive 3D portfolio. Walk around a cozy room and discover who I am." />
+    <title>Abhijit Parida</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Loading screen -->
+    <div id="loading-screen">
+      <div class="loading-inner">
+        <div class="loading-name">Abhijit Parida</div>
+        <div class="loading-subtitle">loading room...</div>
+        <div class="loading-bar-wrap">
+          <div class="loading-bar" id="loading-bar"></div>
+        </div>
+        <div class="loading-hint">WASD to move &nbsp;·&nbsp; Mouse to look &nbsp;·&nbsp; Click to interact</div>
+      </div>
+    </div>
+
+    <!-- Enter prompt (after load, before pointer lock) -->
+    <div id="enter-screen" class="hidden">
+      <div class="enter-inner">
+        <h1>Abhijit Parida</h1>
+        <p class="enter-tagline">software engineer &amp; builder of things</p>
+        <button id="enter-btn">Click to Enter</button>
+        <p class="enter-hint">WASD · Mouse Look · Click to Interact</p>
+      </div>
+    </div>
+
+    <!-- Main canvas -->
+    <canvas id="canvas"></canvas>
+
+    <!-- Crosshair -->
+    <div id="crosshair">
+      <div class="ch-dot"></div>
+    </div>
+
+    <!-- Interaction prompt -->
+    <div id="interact-prompt" class="hidden">
+      <span id="interact-label">Press E or Click</span>
+    </div>
+
+    <!-- Info panel overlay -->
+    <div id="info-panel" class="hidden">
+      <div class="panel-inner">
+        <button id="panel-close" aria-label="Close">&times;</button>
+        <div class="panel-tag" id="panel-tag">About</div>
+        <h2 id="panel-title">Title</h2>
+        <div id="panel-body"></div>
+      </div>
+    </div>
+
+    <!-- Pointer lock instructions (when locked) -->
+    <div id="hud" class="hidden">
+      <div id="hud-hint">ESC to release mouse</div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
